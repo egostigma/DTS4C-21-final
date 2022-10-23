@@ -1,9 +1,11 @@
 import "./ListItem.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function ListItem({ index }) {
+export default function ListItem({ index ,data}) {
   const [isHovered, setIsHovered] = useState(false);
-
+  const backdrop = `https://image.tmdb.org/t/p/original/${data.backdrop_path}`;
+  const urlShow  = `/movie-selected/${data.id}`
   return (
     <div
       className="listItem"
@@ -12,25 +14,28 @@ export default function ListItem({ index }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <img
-        src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU7D36jL6KiLG1xI8Xg_cZK-hYQj1L8yRxbQuB0rcLCnAk8AhEK5EM83QI71bRHUm0qOYxonD88gaThgDaPu7NuUfRg.jpg?r=4ee"
+        src={backdrop}
         alt=""
       />
-      {isHovered && (
+      {isHovered ? 
         <>
-          <div className="itemInfo">
-            <div className="itemInfoTop">
-              <span>1 hour 14 mins</span>
-              <span className="limit">+16</span>
-              <span>1999</span>
+          <Link to={urlShow}>
+            <div className="itemInfo">
+              <div className="itemInfoTop">
+                <span>{data.original_title}</span>
+                <span className="limit">{data.original_language}</span>
+                <span>{data.vote_average}</span>
+              </div>
+              <div className="desc">
+                {data.overview.slice(0,100)}
+              </div>
+              <div className="genre">Action</div>
             </div>
-            <div className="desc">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Praesentium hic rem eveniet error possimus, neque ex doloribus.
-            </div>
-            <div className="genre">Action</div>
-          </div>
+          </Link>
         </>
-      )}
+      :
+      <></>
+      }
     </div>
   );
 }

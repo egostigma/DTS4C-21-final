@@ -83,14 +83,18 @@ export default function List(props) {
           slidesToSlide={1}
           swipeable
         >
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
+          {
+            props.data ? 
+            props.data.map((item,index)=>{
+              return(
+                <ListItem data={item} key={index}/>
+              )
+            })
+
+            : 
+            <div></div>
+          }
+
         </Carousel>
       ) : (
         <Carousel
@@ -147,11 +151,18 @@ export default function List(props) {
           slidesToSlide={1}
           swipeable
         >
-          <ListPotraitItem />
-          <ListPotraitItem />
-          <ListPotraitItem />
-          <ListPotraitItem />
-          <ListPotraitItem />
+            {
+            props.data ? 
+            props.data.map((item,index)=>{
+              return(
+                <ListPotraitItem  data={item} key={index}/>
+              )
+            })
+
+            : 
+            <div></div>
+          }
+         
         </Carousel>
       )}
     </div>

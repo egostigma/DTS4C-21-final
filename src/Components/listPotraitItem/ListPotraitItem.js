@@ -1,12 +1,13 @@
 import "./ListPotraitItem.scss";
 
-export default function ListPotraitItem({ index }) {
+export default function ListPotraitItem({ data }) {
+  const poster = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
   return (
     <div
       className="listPotraitItem"
     >
       <img
-        src="https://s4.bukalapak.com/img/4314209492/large/entertainment_2014_06_the_giver_movie_poster_main.jpg.webp"
+        src={poster}
         alt=""
       />
     </div>

@@ -3,6 +3,8 @@ import { CardImage } from "react-bootstrap-icons";
 import "./Top10Item.scss";
 
 const Top10Item = (props) => {
+  const poster = `https://image.tmdb.org/t/p/original/${props.data.poster_path}`;
+
   return (
     <div className="d-none d-sm-block">
       <div className="cardTop10">
@@ -11,7 +13,7 @@ const Top10Item = (props) => {
         </div>
         <div className="right">
           <img
-            src="https://www.indiewire.com/wp-content/uploads/2019/12/midsommar.jpg?w=800"
+            src={poster}
             className="card-img"
             alt="..."
           />

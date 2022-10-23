@@ -4,25 +4,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Top10List = (props) => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
 
   return (
     <div className="list">
@@ -81,16 +62,18 @@ const Top10List = (props) => {
         slidesToSlide={1}
         swipeable
       >
-        <Top10Item chartNumber="1" />
-        <Top10Item chartNumber="2" />
-        <Top10Item chartNumber="3" />
-        <Top10Item chartNumber="4" />
-        <Top10Item chartNumber="5" />
-        <Top10Item chartNumber="6" />
-        <Top10Item chartNumber="7" />
-        <Top10Item chartNumber="8" />
-        <Top10Item chartNumber="9" />
-        <Top10Item chartNumber="10" />
+         {
+            props.data ? 
+            props.data.map((item,index)=>{
+              return(
+                <Top10Item chartNumber={index+1} data={item} key={index}/>
+              )
+            })
+
+            : 
+            <div></div>
+          }
+       
       </Carousel>
     </div>
   );

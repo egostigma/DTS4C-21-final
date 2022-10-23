@@ -30,7 +30,7 @@
     .info {
       width: 35%;
       position: absolute;
-      left: 50px;
+      left: 100px;
       bottom: 200px;
       color: white;
       display: flex;
@@ -78,7 +78,7 @@
   @media (max-width: 480px) {
     .featured {
       height: 300px;
-      position: static;  
+      position: relative;  
       img {
         width: 100%;
       }
@@ -92,6 +92,23 @@
         color: white;
         display: flex;
         align-items: center;
+      }
+      .info{
+        bottom: 20px;
+      }
+
+      .featured--watchButton,
+      .featured--myListButton {
+          display: inline-block;
+          font-size: 18px;
+          font-weight: bold;
+          padding: 10px 02px;
+          border-radius: 1px;
+          text-decoration: none;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          opacity: 1;
+          transition: 0.3s all ease;
       }
     }
 }

@@ -1,12 +1,14 @@
 import "./MovieSelectedheader.scss";
 
-export default function MovieSelectedheader() {
+export default function MovieSelectedheader(props) {
+  const backdrop = `https://image.tmdb.org/t/p/original/${props.data.backdrop_path}`;
+
   return (
     <div className="featured">
-        <img src="https://i.ytimg.com/vi/QP3sxps6k0s/maxresdefault.jpg" alt="" />
+        <img src={backdrop} alt="" />
         <div className="info">
-        <h1 className="movieTitle">Movie Title</h1>
-        <p className="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <h1 className="movieTitle">{props.data.original_title}</h1>
+        <p className="desc d-none d-sm-block">{props.data.overview}</p>
         <div className="featured--buttons">
             <a className="featured--watchButton" href="/">▶ Play</a>
             <a className="featured--myListButton" href="/">+ My List</a>
