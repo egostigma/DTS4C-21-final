@@ -12,19 +12,18 @@ import { Container } from "react-bootstrap";
 
 const MovieSelected = () => {
   let params = useParams();
-  const apiKey = '151cae2823fd2a2eb3eeb1ea54d6660b';
 
   const [movie, setMovie] = useState(null);
   const [popularMovies, setPopularMovies] = useState();
 
   const getDetailMovie = async () => {
-    const data = await axios.get(`https://api.themoviedb.org/3/movie/${params.movieId}?api_key=${apiKey}&language=en-US`);
+    const data = await axios.get(`https://api.themoviedb.org/3/movie/${params.movieId}?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US`);
     setMovie(data.data);
   }
 
 
   const getPopularMovies = async () => {
-    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1`);
+    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US&sort_by=popularity.desc&page=1`);
     setPopularMovies(data.data.results.slice(6,20));
   }
 

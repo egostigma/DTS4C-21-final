@@ -9,7 +9,6 @@ import "./Home.scss";
 import axios from "axios";
 
 function Home() {
-  const apiKey = '151cae2823fd2a2eb3eeb1ea54d6660b';
   const [loading, setLoading] = useState(true);
   const [popularMovies, setPopularMovies] = useState();
   const [featuredMovies, setFeaturedMovies] = useState();
@@ -17,17 +16,17 @@ function Home() {
 
 
   const getPopularMovies = async () => {
-    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1`);
+    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US&sort_by=popularity.desc&page=1`);
     setPopularMovies(data.data.results.slice(6,20));
   }
 
   const getFeaturedMovies = async() => {
-    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1`);
+    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US&sort_by=popularity.desc&page=1`);
     setFeaturedMovies(data.data.results.slice(0,5));
   }
 
   const getMovieChart = async() => {
-    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1`);
+    const data = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US&sort_by=popularity.desc&page=1`);
     setMovieChart(data.data.results.slice(0,10));
   }
 
