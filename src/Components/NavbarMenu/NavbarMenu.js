@@ -29,7 +29,9 @@ function NavbarMenu() {
       <Navbar expand="lg" className={isSrolled ? "navbar scrolled" : "navbar"}>
         <ContainerFluid className="container">
           <div className="left">
+            <Link to="/">
             <img src={logo} alt="" />
+            </Link>
             <div className="d-none d-sm-block">
               <span><Link to="/" className="navLink">Homepage</Link></span>
               <span>Series</span>

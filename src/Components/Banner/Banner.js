@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
 import "./Banner.scss";
 
 const Banner = (props) => {
@@ -9,9 +10,11 @@ const Banner = (props) => {
       props.data ? 
       props.data.map((item, index) => {
         const backdrop = `https://image.tmdb.org/t/p/original/${item.backdrop_path}`;
+        const urlShow  = `/movie-selected/${item.id}`
         return (
           <Carousel.Item key={index}>
-             <section className="featured" style={{
+            <Link style={{color:"white"}} to={urlShow}>
+              <section className="featured" style={{
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundImage: `url(${backdrop})`
@@ -23,6 +26,7 @@ const Banner = (props) => {
                       </div>
                   </div>
               </section>
+            </Link>
           </Carousel.Item>
         );
       })

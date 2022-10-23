@@ -19,7 +19,7 @@ export default function ListItem({ index ,data}) {
       />
       {isHovered ? 
         <>
-          <Link to={urlShow}>
+          <Link to={urlShow} style={{color:"white"}}>
             <div className="itemInfo">
               <div className="itemInfoTop">
                 <span>{data.original_title}</span>
@@ -29,7 +29,7 @@ export default function ListItem({ index ,data}) {
               <div className="desc">
                 {data.overview.slice(0,100)}
               </div>
-              <div className="genre">Action</div>
+              {/* <div className="genre">Action</div> */}
             </div>
           </Link>
         </>
