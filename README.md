@@ -1,19 +1,13 @@
-# DTS REA4 Final Project
+# DTS REA4 Final Project Pair 21
 
-Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk). 
+## Link live app
 
-## Daftar pair
+[https://dts4c-21-final.web.app](https://dts4c-21-final.web.app)
 
-Tugas dikerjakan secara berpasangan, untuk daftar kelompok bisa dilihat pada masing-masing Classroom atau Discord Class.
+## Demo app
 
-## Fork and Clone
+![Demo](./public/demo.gif)
 
-Mohon perwakilan dari pair bisa melakukan fork repo ini dan clone, untuk repositori yang di fork menggunakan penamaan:
+## Deskripsi projek
 
-`dts4[a/b/c]-[nomor pair]-final`
-
-Contoh: `dts4a-01-final`
-
-## Branching, commit
-
-Branch dapat sesuai dengan kebutuhan dan kesepakatan bersama dalam pair, namun hasil akhirnya harus di merge ke branch `main` dan di push ke Github. Pastikan hasil akhir kode sudah ter-push!
+Project ini adalah Movie app yang dibangun menggunakan [react.js](https://reactjs.org/) dengan framework CSS [React Bootstrap](https://react-bootstrap.github.io/), autentikasi dan hosting [firebase](https://firebase.google.com/), dan API dari [api.themoviedb.org](https://www.themoviedb.org/documentation/api).
