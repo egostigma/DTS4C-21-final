@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ContainerFluid from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
+// import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Search, CaretDownFill, BellFill, Gift } from "react-bootstrap-icons";
 import { signingOut } from "../../utils/firebase/signout";

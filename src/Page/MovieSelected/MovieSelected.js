@@ -1,4 +1,4 @@
-import { async } from "@firebase/util";
+// import { async } from "@firebase/util";
 import { useEffect,useState} from "react";
 import {useParams} from "react-router-dom";
 
@@ -8,7 +8,7 @@ import MovieSelectedheader from '../../Components/MovieSelectedHeader/MovieSelec
 import NavbarMenu from '../../Components/NavbarMenu/NavbarMenu'
 import './MovieSelected.scss'
 import axios from "axios";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import VideoTrailer from "../../Components/VideoTrailer/VideoTrailer";
 
 const MovieSelected = () => {
@@ -20,13 +20,13 @@ const MovieSelected = () => {
   const [play, setPlay] = useState(false)
 
   
-  const getDetailMovie = async () => {
-    const data = await axios.get(`https://api.themoviedb.org/3/movie/${params.movieId}?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US`);
+  const getDetailMovie = async (movieId) => {
+    const data = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US`);
     setMovie(data.data);
   }
 
-  const getVideo = async () => {
-    const data = await axios.get(`https://api.themoviedb.org/3/movie/${params.movieId}/videos?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US`);
+  const getVideo = async (movieId) => {
+    const data = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${process.env.REACT_APP_TMDB_APIKEY}&language=en-US`);
     let latestIndex = data.data.results.length -1;
     setYoutubeId(data.data.results[latestIndex]);
   }
@@ -41,14 +41,14 @@ const MovieSelected = () => {
   }
 
   useEffect(() => {
-    getDetailMovie();
+    getDetailMovie(params.movieId);
     getPopularMovies();
-    getVideo()
+    getVideo(params.movieId)
 
     // console.log('movieId:'. params.movieId)
 
 
-  }, []);
+  }, [params.movieId]);
   return (
     <div  className="MovieSelectedBody">
         {

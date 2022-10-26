@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import "./VideoTrailer.scss";
 
 export default function VideoTrailer(props) {
@@ -7,6 +7,7 @@ export default function VideoTrailer(props) {
     <div className="featured">
         <div className="videoContainer">
         <iframe
+            title={props.title}
             width="100%"
             height="100%"
             src={youtubeURL}

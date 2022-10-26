@@ -10,7 +10,7 @@ export default function MovieSelectedheader(props) {
         <h1 className="movieTitle">{props.data.original_title}</h1>
         <p className="desc d-none d-sm-block">{props.data.overview}</p>
         <div className="featured--buttons">
-            <a className="featured--watchButton" onClick={props.playMovie}>▶ Play</a>
+            <button className="featured--watchButton" onClick={props.playMovie}>▶ Play</button>
             <a className="featured--myListButton" href="/">+ My List</a>
         </div>
         </div>

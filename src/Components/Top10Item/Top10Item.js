@@ -1,5 +1,5 @@
-import { Card, Col, Row } from "react-bootstrap";
-import { CardImage } from "react-bootstrap-icons";
+// import { Card, Col, Row } from "react-bootstrap";
+// import { CardImage } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import "./Top10Item.scss";
 
