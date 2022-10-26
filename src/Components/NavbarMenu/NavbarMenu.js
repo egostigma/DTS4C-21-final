@@ -30,10 +30,14 @@ function NavbarMenu() {
         <ContainerFluid className="container">
           <div className="left">
             <Link to="/">
-            <img src={logo} alt="" />
+              <img src={logo} alt="" />
             </Link>
             <div className="d-none d-sm-block">
-              <span><Link to="/" className="navLink">Homepage</Link></span>
+              <span>
+                <Link to="/" className="navLink">
+                  Homepage
+                </Link>
+              </span>
               <span>Series</span>
               <span>Movie</span>
               <span>Popular</span>

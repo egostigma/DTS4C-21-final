@@ -3,6 +3,7 @@ build
 public
 coverage
 *.json
+*.yml
 *.md
 *.html
 *.css

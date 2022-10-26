@@ -4,7 +4,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Top10List = (props) => {
-
   return (
     <div className="list">
       <span className="listTitle">{props.title}</span>
@@ -62,18 +61,15 @@ const Top10List = (props) => {
         slidesToSlide={1}
         swipeable
       >
-         {
-            props.data ? 
-            props.data.map((item,index)=>{
-              return(
-                <Top10Item chartNumber={index+1} data={item} key={index}/>
-              )
-            })
-
-            : 
-            <div></div>
-          }
-       
+        {props.data ? (
+          props.data.map((item, index) => {
+            return (
+              <Top10Item chartNumber={index + 1} data={item} key={index} />
+            );
+          })
+        ) : (
+          <div></div>
+        )}
       </Carousel>
     </div>
   );

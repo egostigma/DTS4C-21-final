@@ -29,7 +29,7 @@ export default function List(props) {
       },
       items: 2,
       partialVisibilityGutter: 30,
-    }
+    },
   };
 
   return (
@@ -65,18 +65,13 @@ export default function List(props) {
           slidesToSlide={1}
           swipeable
         >
-          {
-            props.data ? 
-            props.data.map((item,index)=>{
-              return(
-                <ListItem data={item} key={index}/>
-              )
+          {props.data ? (
+            props.data.map((item, index) => {
+              return <ListItem data={item} key={index} />;
             })
-
-            : 
+          ) : (
             <div></div>
-          }
-
+          )}
         </Carousel>
       ) : (
         <Carousel
@@ -108,18 +103,13 @@ export default function List(props) {
           slidesToSlide={1}
           swipeable
         >
-            {
-            props.data ? 
-            props.data.map((item,index)=>{
-              return(
-                <ListPotraitItem  data={item} key={index}/>
-              )
+          {props.data ? (
+            props.data.map((item, index) => {
+              return <ListPotraitItem data={item} key={index} />;
             })
-
-            : 
+          ) : (
             <div></div>
-          }
-         
+          )}
         </Carousel>
       )}
     </div>

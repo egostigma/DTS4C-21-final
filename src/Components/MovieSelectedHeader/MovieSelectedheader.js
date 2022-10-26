@@ -5,15 +5,19 @@ export default function MovieSelectedheader(props) {
 
   return (
     <div className="featured">
-        <img src={backdrop} alt="" />
-        <div className="info">
+      <img src={backdrop} alt="" />
+      <div className="info">
         <h1 className="movieTitle">{props.data.original_title}</h1>
         <p className="desc d-none d-sm-block">{props.data.overview}</p>
         <div className="featured--buttons">
-            <button className="featured--watchButton" onClick={props.playMovie}>▶ Play</button>
-            <a className="featured--myListButton" href="/">+ My List</a>
+          <button className="featured--watchButton" onClick={props.playMovie}>
+            ▶ Play
+          </button>
+          <a className="featured--myListButton" href="/">
+            + My List
+          </a>
         </div>
-        </div>
+      </div>
     </div>
   );
 }
